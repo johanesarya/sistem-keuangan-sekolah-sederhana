@@ -1,0 +1,499 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 22, 2022 at 05:46 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `db_keuangan`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_akun`
+--
+
+CREATE TABLE `tbl_akun` (
+  `id_akun` int(50) NOT NULL,
+  `nama_akun` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_akun`
+--
+
+INSERT INTO `tbl_akun` (`id_akun`, `nama_akun`) VALUES
+(100, 'KAS'),
+(110, 'BANK'),
+(111, 'BANK MAYAPADA INDUK'),
+(112, 'BANK BRI AGRO'),
+(113, 'BANK BNI'),
+(114, 'DEPOSITO'),
+(115, 'BANK BNI BERHADIAH'),
+(116, 'BANK MANDIRI'),
+(117, 'BANK BCA'),
+(118, 'BANK MAYAPADA  889.1'),
+(119, 'BANK  KESAHTERAAN'),
+(120, 'PIUT.UANG SEKOLAH'),
+(121, 'PIUT.UANG TAB.EBTA'),
+(122, 'PIUT UANG POM'),
+(123, 'PIUT.UANG KOMP'),
+(124, 'PIUT.UANG PRAKTEK'),
+(125, 'PIUT.UANG ALAT/JAMINAN SEKOLAH'),
+(129, 'PIUT.LAIN2'),
+(130, 'PERSEDIAAN-ALAT SEKOLAH'),
+(131, 'PERSEDIAAN-BAHAN PRAKTIKUM'),
+(132, 'PERSEDIAAN-ALAT OLAH RAGA'),
+(133, 'PERSEDIAAN-PAKAIAN/SERAGAM'),
+(139, 'PERSEDIAAN-LAIN2'),
+(140, 'UANG MUKA PEMBELIAN'),
+(141, 'UANG MUKA (BIAYA DIBTR DMK)'),
+(142, 'PIUTANG MODAL BISNIS CENTER'),
+(150, 'BANK BNI'),
+(200, 'TANAH'),
+(201, 'BANGUNAN LAMA'),
+(202, 'BANGUNAN BARU'),
+(203, 'LAPANGAN OLAH RAGA & PAGAR'),
+(204, 'KENDARAAN'),
+(205, 'INVENTARIS KANTOR / KELAS'),
+(206, 'INVENTARIS LAB'),
+(207, 'INVENTARIS UMUM'),
+(208, '\"INVENMTARIS PERPUSTAKAAN (BUKU,VCD,DLL)\"'),
+(209, 'BANGUNAN DALAM PROSES'),
+(210, 'AKM.PENYUSUTAN BANGUNAN LAMA'),
+(211, 'AKM.PENYUSUTAN BANGUNAN BARU'),
+(212, 'AKM.PENYUSUTAN LAPANGAN OR'),
+(213, 'AKM.PENYUSUTAN KENDARAAN'),
+(214, 'AKM.PENYUSUTAN INVENTARIS KANTOR'),
+(215, 'AKM.PENYUSUTAN INVENTARIS LABORAT'),
+(216, 'AKM.PENYUSUTAN INVENTARIS UMUM'),
+(217, 'DANA PEMB-BANGUNAN'),
+(218, 'DANA PEMB-PERLENGKAPAN +LAB (KEL-1 )'),
+(219, 'DANA PEMB-PERLENGKAPAN+LAB (KEL-2)'),
+(220, 'DANA PEMB-INVENTARIS (KEL-1)'),
+(221, 'DANA PEMB-INVENTARIS (KEL-2)'),
+(222, 'DANA PEMB-KENDARAAN'),
+(300, 'HTG DAGANG'),
+(301, 'HTG BI.LAB'),
+(302, 'HTG BI.KANTOR'),
+(303, 'HTG BI.GAJI & TUNJ'),
+(304, 'HTG BI.PENGAJARAN'),
+(305, 'HTG BUKU'),
+(306, 'HTG BI.UUB'),
+(307, 'HTG BI.EBTA'),
+(308, 'HTG BI.RAPAT & PEJL.DINAS'),
+(309, 'HTG BI.PRAMUKA'),
+(310, 'HTG BI.PERPUSTAKAAN'),
+(311, 'HTG BI.LAIN2'),
+(312, 'HTG BI.POM/KOMITE SEKOLAH'),
+(313, 'HTG BI.UANG JAMINAN ALAT'),
+(314, 'HTG BI.PAJAK PENGHASILAN'),
+(315, 'HTG BI.YAYASAN DANAGAS'),
+(316, 'HTG BI.YAYASAN UANG SUMBANGAN'),
+(317, 'HTG PLT'),
+(318, 'TITIPAN BEASISWA/BOSS/BPP/DIG/SUMB.PEM/BOOMM'),
+(319, 'TITIPAN UANG SERAGAM'),
+(320, 'UANG MUKA-SEKOLAH'),
+(321, 'UANG MUKA-TAB.EBTA/UJIAN'),
+(322, 'UANG MUKA PKL / PRAKERIN'),
+(323, 'UANG MUKA-KOMPUTER'),
+(324, 'UANG MUKA-PRAKTEK'),
+(325, 'UANG MUKA-DAFTAR (ADM)'),
+(326, 'UANG MUKA-FORMULIR'),
+(327, 'UANG MUKA-KARYAWISATA'),
+(328, 'UANG MUKA-UKS'),
+(329, 'UANG MUKA-STP2K / MKKS'),
+(330, 'UANG MUKA TES'),
+(331, 'UANG MUKA PSIKOTES'),
+(332, 'UANG MUKA-ALAT'),
+(333, 'UANG MUKA-MASAK'),
+(334, 'UANG MUKA-SARPRA'),
+(335, 'UANG MUKA-EKSTRA'),
+(336, 'UANG TITIPAN HUMAS'),
+(337, 'UANG MUKA-PERPUSTAKAAN'),
+(338, 'UANG MUKA-MOS/OSPEK'),
+(339, 'UANG MUKA-LAIN2 (METERAI)'),
+(340, 'UANG MUKA-D P P'),
+(341, 'UANG MUKA-MAJALAH/MEKA NECI'),
+(342, 'UANG MUKA-ASURANSI'),
+(343, 'UANG MUKA-KALENDER'),
+(344, 'UANG MUKA KEROHANIAN'),
+(345, 'UANG MUKA KEGIATAN SISWA'),
+(346, '\"UANG MUKA-FOTO,KARTU SISWA,MAP,PLAKAT\"'),
+(347, 'UANG MUKA PENTAS SENI'),
+(348, 'UANG MUKA-SKS'),
+(360, 'UANG MUKA OPERASIONAL PENDIDIKAN'),
+(361, 'UANG MUKA SKS'),
+(362, ''),
+(363, 'UANG MUKA KEMAHASISWAAN'),
+(364, 'UANG MUKA SKRIPSI'),
+(390, 'UANG MUKA TITIPAN'),
+(398, 'SALDO AWAL UANG MUKA-KAS BON'),
+(399, 'HUTANG LAIN2'),
+(401, 'MODAL'),
+(402, 'LABA RUGI DITAHAN'),
+(403, 'LABA RUGI THN BERJALAN'),
+(500, 'PENERIMAAN -  UANG SEKOLAH'),
+(501, 'PENERIMAAN -  UANG UJIAN'),
+(502, 'PENERIMAAN -  UANG KARYAWISATA'),
+(503, 'PENERIMAAN -  UANG UKS'),
+(504, 'PENERIMAAN -  UANG STP2K'),
+(505, 'PENERIMAAN -  UANG EXTRA KUL'),
+(506, 'PENERIMAAN -  UANG KOMPUTER/IT'),
+(507, 'PENERIMAAN -  UANG MASAK'),
+(508, 'PENERIMAAN -  UANG BUKU/LKS/MODUL'),
+(509, 'PENERIMAAN - UANG PKL / Prakerin'),
+(510, 'PENERIMAAN -  UANG MAJALAH/BULETIN'),
+(511, 'PENERIMAAN -  KONTRIBUSI DARI BINUS'),
+(512, 'PENERIMAAN -  YG AKAN DITERIMA'),
+(513, 'PENDAPATAN - SARPRA'),
+(514, 'PENDAPATAN DAY CARE'),
+(515, 'PENDAPATAN PRA PLAYGROUP'),
+(529, 'PENERIMAAN - UANG HARI BESAR'),
+(530, 'PENERIMAAN - UANG TEST'),
+(531, 'PENERIMAAN - UANG PRAKTEK'),
+(532, 'PENERIMAAN - UANG ALAT'),
+(533, 'PENERIMAAN - LABA  PENJ AKTIVA'),
+(534, 'PENERIMAAN - UANG FORMULIS PPD'),
+(535, 'PENERIMAAN - UANG MOS'),
+(536, 'PENERIMAAN - UANG SERAGAM'),
+(537, 'PENERIMAAN - UANG DENDA'),
+(538, 'PENERIMAAN - BOSS/BPP'),
+(539, 'PENERIMAAN - UANG PERPUSTAKAAN'),
+(540, 'PENERIMAAN - UANG D.P.P'),
+(541, 'PENERIMAAN - UANG TEST PSIKOLOGI/ IQ'),
+(542, 'PENERIMAAN - UANG ASURANSI'),
+(543, 'PENERIMAAN - UANG KALENDER'),
+(544, 'PENERIMAAN - UANG IURAN KEGIATAN KEAGAMAAN'),
+(545, 'PENERIMAAN - UANG KEGIATAN OSIS/KEPEMIMPINAN'),
+(546, '\"PENERIMAAN - UANG FOTO,KARTU SISWA,DLL\"'),
+(547, 'PENERIMAAN - UANG METERAI'),
+(548, 'PENERIMAAN - UANG SKS'),
+(549, 'PENERIMAAN - UANG P.P.D/OPEN HOUSE'),
+(550, 'PENERIMAAN - UANG GEDUNG'),
+(551, 'PENERIMAAN - KOMITE'),
+(552, ''),
+(553, ''),
+(554, ''),
+(555, ''),
+(556, ''),
+(557, ''),
+(558, ''),
+(559, 'PENERIMAN - CUTI MAHASISWA'),
+(560, 'PENERIMAAN - OPERASIONAL PENDIDIKAN'),
+(561, 'PENERIMAAN - SKS TEORI'),
+(562, 'PENERIMAAN - SKS PRAKTEK'),
+(563, 'PENERIMAAN - SKS KEMAHASISWAAN'),
+(564, 'PENERIMAAN - SKS SKRIPSI'),
+(565, 'PENDAPATAN SEWA ATM'),
+(599, 'PENERIMAAN - UANG BOMM/DANA MANDARIN/KOMITE'),
+(600, 'BI - GAJI & TUNJ GURU TETAP'),
+(601, 'BI - GAJI & TUNJ GURU TIDAK TETAP'),
+(602, 'BI - KESEJAHTERAAN & PENGOBATAN'),
+(603, 'BI - PRAMUKA & EX SCHOOL'),
+(604, 'BI - PENGAJARAN'),
+(605, 'BI - PERAWATAN KELAS'),
+(606, 'BI - ALAT TULIS & CETAKAN'),
+(607, 'BI - RAPAT & PERJALANAN DINAS'),
+(608, 'BI -PRAKERIN'),
+(609, 'BI - BAHAN PRAKTIKUM'),
+(610, 'BI - REPEM INVENTARIS'),
+(611, 'BI - PENYUSUTAN INV.KANTOR'),
+(612, 'BI - PENYUSUTAN INV.LABORAT'),
+(613, 'BI. BAHAN HABIS PAKAI'),
+(614, 'BEBAN GAJI - GURU EKSTRA'),
+(615, 'BI - LPMP'),
+(620, 'BI - UUB/UUS/UTS/UAAAS,TRY OUT,US,UN,UKK'),
+(621, 'BI - STP 2 K'),
+(622, 'BI - KARYAWISATA'),
+(623, 'BI - UKS'),
+(624, '\"BI - WISUDA,PKL,PELEPASAN KELULUSAN\"'),
+(625, 'BI - P.P.D  (PENDAFTARAN)'),
+(626, 'BI - SERAGAM GURU'),
+(627, 'BI - THR GURU'),
+(628, 'BI - IKLAN & PROMOSI'),
+(629, 'BI - HARI BESAR'),
+(630, 'BI - PERPUSTAKAAN'),
+(631, 'BI - SUMBANGAN/REPRES'),
+(632, 'BI - RAPAT INTERN'),
+(633, 'BI - ALAT HABIS PAKAI'),
+(634, 'BI - PENGGANDAAN'),
+(635, 'BI - PENELITIAN/LPMP'),
+(636, 'BI - PENGABDIAN MASYARAKAT'),
+(637, 'BI - BUKU'),
+(638, 'BI - SUBSIDI BIMBINGAN BELAJAR'),
+(639, 'BI - MASAK (TK)'),
+(640, 'BI - MAJALAH / BULETIN'),
+(641, 'BI -SERAGAM SISWA/MAHASISWA'),
+(642, 'BI - ASURANSI JIWA'),
+(643, 'BI - REWARD GURU (TALI ASIH)'),
+(644, 'BI - KEGIATAN KEAGAMAAN'),
+(645, 'BI - KEGIATAN KE OSIS AN / KEPEMIMPINAN'),
+(646, 'BI - LOMBA EXTRA'),
+(647, 'BI - LOMBA PELAJARAN'),
+(648, 'BI - PEL. TAMBAHAN'),
+(697, 'BI - REWARD GURU/ THR GURU KONTRAK'),
+(699, 'BI - LAIN2 (akreditasi & penuntasan UN)'),
+(700, 'BI - GAJI & TUNJ KARY'),
+(701, 'BI - KESEJAHTERAAN & PENGOBATAN KARY'),
+(702, 'BI - SERAGAM KARY'),
+(703, 'BI - THR KARY'),
+(704, '\"BI - MAKAN,MINUM,DAPUR\"'),
+(705, 'BI - REPEM BANGUNAN'),
+(706, 'BI - ALAT TULIS& CETAKAN'),
+(707, 'BI - TELP / FAX / INTERNET / HP'),
+(708, 'BI - ASURANSI'),
+(709, 'BI - REPRES'),
+(710, '\"BI - LISTRIK,AIR,SAMPAH,KSM\"'),
+(711, 'BI - REKRUT KARY'),
+(712, 'BI - PENYUSUTAN BANGUNAN'),
+(713, 'BI - PENYUSUTAN INVENTARIS'),
+(714, 'BI - PPH'),
+(715, 'BI - HUMAS'),
+(716, 'BI - PEMELIHARAAN INVENTARIS'),
+(717, 'BI - PELATIHAN KARY'),
+(718, 'BI - BAHAN HABIS PAKAI'),
+(719, 'BI - UANG DINAS KARYAWAN'),
+(720, 'BI - REPEM KENDARAAN'),
+(721, 'BI - BEA SISWA DARI YAYASAN'),
+(722, 'BI - PENYUSUAN KENDARAAN'),
+(728, 'BI - IKLAN PROMOSI'),
+(729, 'BI - BAHAN BAKAR KENDARAAN SEKOLAH'),
+(733, 'BI. ALAT HABIS PAKAI'),
+(796, 'BI - KONSUMSI RAPAT MANAGER DGN YAYASAN'),
+(797, 'BI - REWARD KARY (TALI ASIH)'),
+(798, 'BI - PENINGKATAN MUTU GURU'),
+(799, 'BI - LAIN2 (TABUNG PEMADAM KEBAKARAN)'),
+(800, 'PENDAPATAN -  UANG SAMPAH & AIR (KANTIN)'),
+(801, 'PENDAPATAN -  PEMAKAIAN TELP'),
+(802, 'PENDAPATAN -  LABORATORIUM'),
+(803, 'PENDAPATAN -  JASA GIRO'),
+(804, 'PENDAPATAN -  BAZAR'),
+(805, 'PENDAPATAN -  SUMB DARI PEMERINTAH'),
+(806, 'PENDAPATAN -  SUMB DARI YAYASAN'),
+(807, 'PENDAPATAN -  SELISIH HRG / STOCK OPNAME'),
+(808, 'PENDAPATAN -  DISCOUNT PEMBELIAN'),
+(809, 'PENDAPATAN -  FOTO COPY'),
+(810, 'PENDAPATAN -  BUNGA DEPOSITO'),
+(890, 'PENDAPATAN -  KEDAI'),
+(891, 'PENDAPATAN -  ASRAMA'),
+(899, 'PENDAPATAN -  LAIN2'),
+(900, 'BI - BUNGA BANK (ADM BANK)'),
+(901, 'BI - HARI BESAR'),
+(902, 'BI - PERIJINAN'),
+(903, 'BI - KONSULTAN'),
+(904, 'BI - PPN ATAS PEMBELIAN & JASA'),
+(905, 'BI -MELALUI KOMITE'),
+(906, 'BI -'),
+(907, 'BI -'),
+(908, 'BI -'),
+(909, 'BI - FOTOCOPY'),
+(910, 'BI -'),
+(990, 'BI - KEDAI'),
+(991, 'BI - ASRAMA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_anggaran`
+--
+
+CREATE TABLE `tbl_anggaran` (
+  `id_anggaran` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `nilai` bigint(20) NOT NULL,
+  `tanggal` date NOT NULL,
+  `jenjang` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_anggaran`
+--
+
+INSERT INTO `tbl_anggaran` (`id_anggaran`, `keterangan`, `nilai`, `tanggal`, `jenjang`) VALUES
+(1, 'Natalan Bersama', 1250000, '2022-10-22', 'Stifera'),
+(5, 'Dies Natalies', 10000000, '2022-10-22', 'Stifera'),
+(6, 'Konser Akbar', 200000000, '2022-10-22', 'Stifera');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_jenjang`
+--
+
+CREATE TABLE `tbl_jenjang` (
+  `id_jenjang` int(11) NOT NULL,
+  `jenjang` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_jenjang`
+--
+
+INSERT INTO `tbl_jenjang` (`id_jenjang`, `jenjang`) VALUES
+(1, 'TK'),
+(2, 'SD'),
+(3, 'SMP'),
+(4, 'SMA'),
+(5, 'Stifera');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_realisasi`
+--
+
+CREATE TABLE `tbl_realisasi` (
+  `id_realisasi` int(11) NOT NULL,
+  `keterangan` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL,
+  `nilai` bigint(11) NOT NULL,
+  `jenjang` varchar(10) NOT NULL,
+  `unit` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_realisasi`
+--
+
+INSERT INTO `tbl_realisasi` (`id_realisasi`, `keterangan`, `tanggal`, `nilai`, `jenjang`, `unit`) VALUES
+(3, 'Konser Akbar', '2023-01-28', 150000000, 'Stifera', 'BAU');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_unit`
+--
+
+CREATE TABLE `tbl_unit` (
+  `id_unit` int(11) NOT NULL,
+  `unit` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_unit`
+--
+
+INSERT INTO `tbl_unit` (`id_unit`, `unit`) VALUES
+(1, 'BAU'),
+(2, 'BAA'),
+(3, 'BAK');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id` int(11) NOT NULL,
+  `jenjang` varchar(10) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `username` varchar(70) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id`, `jenjang`, `name`, `username`, `password`) VALUES
+(7, 'TK', 'Admin TK', 'admin_tk', '4b6f7c29701ed06b4c0664bdee3295f6'),
+(8, 'SD', 'Admin SD', 'admin_sd', '71497c3242e3972f31dcd3ca03f0eeb3'),
+(9, 'SMA', 'Admin SMA', 'admin_sma', 'a2fc61ef4b423cb13a2e4e33a9b10ce4'),
+(10, 'Stifera', 'Admin Stifera', 'admin_stifera', '0cdde10bdff64395077e13dd5cd13878'),
+(12, 'SMP', 'Admin SMP', 'admin_smp', 'f64c8d4d7c6c4ce07c7e557a9edd2877');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_akun`
+--
+ALTER TABLE `tbl_akun`
+  ADD PRIMARY KEY (`id_akun`);
+
+--
+-- Indexes for table `tbl_anggaran`
+--
+ALTER TABLE `tbl_anggaran`
+  ADD PRIMARY KEY (`id_anggaran`);
+
+--
+-- Indexes for table `tbl_jenjang`
+--
+ALTER TABLE `tbl_jenjang`
+  ADD PRIMARY KEY (`id_jenjang`);
+
+--
+-- Indexes for table `tbl_realisasi`
+--
+ALTER TABLE `tbl_realisasi`
+  ADD PRIMARY KEY (`id_realisasi`);
+
+--
+-- Indexes for table `tbl_unit`
+--
+ALTER TABLE `tbl_unit`
+  ADD PRIMARY KEY (`id_unit`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_anggaran`
+--
+ALTER TABLE `tbl_anggaran`
+  MODIFY `id_anggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_jenjang`
+--
+ALTER TABLE `tbl_jenjang`
+  MODIFY `id_jenjang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_realisasi`
+--
+ALTER TABLE `tbl_realisasi`
+  MODIFY `id_realisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_unit`
+--
+ALTER TABLE `tbl_unit`
+  MODIFY `id_unit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
